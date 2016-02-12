@@ -14,6 +14,7 @@ public class PrincipalInterceptor extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
         HttpSession session = httpServletRequest.getSession(false);
+       // session.setMaxInactiveInterval(30);
 
         if (session != null) {
             UserPrincipal principal = (UserPrincipal) session.getAttribute("principal");
